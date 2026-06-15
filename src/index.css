@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso-light: #2D1F17;
+  --color-espresso: #1E140F;
+  --color-espresso-dark: #140D0A;
+  
+  --color-cream-light: #FFFDF9;
+  --color-cream: #FDFBF7;
+  --color-cream-dark: #F4ECE1;
+  
+  --color-gold-light: #DFC69E;
+  --color-gold: #C5A880;
+  --color-gold-dark: #A5865E;
+  
+  --color-latte-light: #FBF8F3;
+  --color-latte: #F5ECE1;
+  --color-latte-dark: #EBDDC9;
+  
+  --color-caramel-light: #563829;
+  --color-caramel: #3D271D;
+  --color-caramel-dark: #271912;
+
+  --font-serif: Marcellus, Cinzel, Playfair Display, serif;
+  --font-sans: "Plus Jakarta Sans", Inter, sans-serif;
+
+  --animate-spin-slow: spin 25s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Base resets & utilities */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #1E140F;
+  color: #F5ECE1;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #140D0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3D271D;
+  border-radius: 4px;
+  border: 1px solid #140D0A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
+
+/* Hide default cursor on desktop devices to enable custom cursor */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, select, input, textarea, [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Premium Glassmorphism Styles */
+.glass-card {
+  background: rgba(30, 20, 15, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.glass-card-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(61, 39, 29, 0.45);
+  border-color: rgba(197, 168, 128, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.glass-panel {
+  background: rgba(20, 13, 10, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+}
+
+/* Subtle Grain Noise Overlay */
+.grain-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Animated Golden Border rotation utility */
+.rotating-border-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.rotating-border-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent, 
+    transparent, 
+    #C5A880, 
+    transparent, 
+    transparent, 
+    #C5A880, 
+    transparent
+  );
+  animation: rotate-border 6s linear infinite;
+  z-index: 0;
+}
+
+.rotating-border-inner {
+  position: relative;
+  z-index: 1;
+  background: #1E140F;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  margin: 1px;
+}
+
+@keyframes rotate-border {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Steam particle keyframes */
+@keyframes steam-rise {
+  0% {
+    transform: translateY(10px) scaleX(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) scaleX(1.2) rotate(10deg);
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-50px) scaleX(1.5) rotate(-15deg);
+    opacity: 0;
+  }
+}
+
+.steam-path-1 {
+  animation: steam-rise 4s ease-in-out infinite;
+}
+
+.steam-path-2 {
+  animation: steam-rise 4s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.steam-path-3 {
+  animation: steam-rise 4s ease-in-out infinite;
+  animation-delay: 2.6s;
+}
