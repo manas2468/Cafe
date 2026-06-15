@@ -1,6 +1,7 @@
 import { useState, type MouseEvent } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Coffee } from 'lucide-react';
+import coffeeVideo from '../assets/my-coffee-pour.mp4';
 
 interface Ripple {
   x: number;
@@ -79,7 +80,7 @@ export const Hero = () => {
           muted
           playsInline
           className="w-full h-full object-cover opacity-45 select-none pointer-events-none"
-          src="https://assets.mixkit.co/videos/preview/mixkit-coffee-pour-and-latte-art-close-up-42023-large.mp4"
+          src={coffeeVideo}
         />
       </motion.div>
 
