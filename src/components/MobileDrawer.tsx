@@ -68,7 +68,7 @@ export const MobileDrawer = ({ isOpen, onClose, navItems }: MobileDrawerProps) =
             <div className="mt-auto border-t border-gold/10 pt-6 flex flex-col gap-4 text-sm text-latte/70">
               <div className="flex items-center gap-3">
                 <MapPin className="w-4.5 h-4.5 text-gold shrink-0" />
-                <span>462 Roastmasters Boulevard, Coffee District</span>
+                <span>Colaba Causeway, Near Gateway of India, Colaba, Mumbai 400001</span>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-4.5 h-4.5 text-gold shrink-0" />
@@ -76,7 +76,7 @@ export const MobileDrawer = ({ isOpen, onClose, navItems }: MobileDrawerProps) =
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4.5 h-4.5 text-gold shrink-0" />
-                <span>+1 (800) 555-BEAN</span>
+                <span>+91 22 5550 2326</span>
               </div>
             </div>
 

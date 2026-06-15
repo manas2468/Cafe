@@ -111,20 +111,18 @@ export const VisitUs = () => {
 
               </div>
             </ScrollReveal>
-
-            {/* Direct Contact Details */}
             <ScrollReveal delay={0.3} className="flex flex-col gap-4 text-sm text-latte/70 pl-2">
               <div className="flex items-center gap-4 group">
                 <div className="w-9 h-9 rounded-full bg-caramel/40 border border-gold/15 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-espresso transition-all duration-300">
                   <MapPin className="w-4.5 h-4.5" />
                 </div>
-                <span>462 Roastmasters Boulevard, Coffee District, NY 10036</span>
+                <span>Colaba Causeway, Near Gateway of India, Colaba, Mumbai 400001</span>
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-9 h-9 rounded-full bg-caramel/40 border border-gold/15 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-espresso transition-all duration-300">
                   <Phone className="w-4.5 h-4.5" />
                 </div>
-                <span>+1 (800) 555-BEAN</span>
+                <span>+91 22 5550 2326</span>
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-9 h-9 rounded-full bg-caramel/40 border border-gold/15 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-espresso transition-all duration-300">
@@ -143,7 +141,7 @@ export const VisitUs = () => {
               
               <iframe
                 title="Velvet Bean Google Maps Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4284566735163!2d-73.98736738459374!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c1054e7d%3A0x5d03fb70f23e007c!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1625000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.205779038237!2d72.82583851489712!3d18.908075387187198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1e83dc2676b%3A0x4a9d7010a307049c!2sColaba%20Causeway%2C%20Colaba%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
                 className="w-full h-full border-0 select-none grayscale invert-[0.9] sepia-[0.45] hue-rotate-[330deg] brightness-[0.88] contrast-[1.18] relative z-10"
                 allowFullScreen={false}
                 loading="lazy"

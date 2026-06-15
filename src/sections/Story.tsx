@@ -53,17 +53,17 @@ export const Story = () => {
               </h2>
               
               <p className="font-sans text-base text-latte/75 leading-relaxed mt-4">
-                Born in 2026, Velvet Bean grew out of a simple philosophy: coffee is not merely a morning routine, but a sacred <HandDrawnUnderline>sensory ritual</HandDrawnUnderline>. We travel to remote highlands to source raw, organic, single-origin beans, honoring the hard work of smallholder micro-farms.
+                Born in 2026, Velvet Bean grew out of a simple philosophy: coffee is not merely a morning routine, but a sacred <HandDrawnUnderline>sensory ritual</HandDrawnUnderline>. We source our raw, organic, single-origin beans from the shade-grown estates of Chikmagalur and the misty hills of Coorg, honoring the heritage of Indian coffee farming.
               </p>
               
               <p className="font-sans text-base text-latte/70 leading-relaxed">
-                Back in our roastery, we apply meticulous temperature profiling to extract sweet, floral, and nutty notes. In our space, the aroma of grinding beans meets a cozy refuge, welcoming you to slow down, breathe, and enjoy coffee <HandDrawnUnderline>brewed with soul</HandDrawnUnderline>.
+                Back in our Colaba roastery, we apply meticulous temperature profiling to extract sweet, floral, and nutty notes. In our space, the aroma of freshly ground Indian beans meets a cozy refuge, welcoming you to slow down, breathe, and enjoy coffee <HandDrawnUnderline>brewed with soul</HandDrawnUnderline>.
               </p>
               
               <div className="flex items-center gap-8 mt-8 border-t border-gold/10 pt-8">
                 <div>
                   <h4 className="font-serif text-3xl text-gold">100%</h4>
-                  <p className="font-sans text-xs text-latte/50 uppercase tracking-widest mt-1">Single-Origin Arabica</p>
+                  <p className="font-sans text-xs text-latte/50 uppercase tracking-widest mt-1">Indian Specialty Arabica</p>
                 </div>
                 <div className="w-[1px] h-12 bg-gold/15" />
                 <div>
