@@ -65,28 +65,33 @@ export const Hero = () => {
       id="home" 
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-espresso"
     >
-      {/* Background Spline 3D Scene with custom blending overlays */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-auto">
-        {/* Soft overlay gradient to blend Spline's background with our deep espresso colors */}
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso-dark/45 via-espresso/15 to-espresso z-10 pointer-events-none" />
-        <iframe
-          src="https://my.spline.design/eveningcoffee-ucaN6EVC9zMVEXbDRzlEoGed/"
-          width="100%"
-          height="100%"
-          className="w-full h-full border-0 select-none scale-100 md:scale-105"
-          title="Velvet Bean 3D Evening Coffee Scene"
+      {/* Background Video with Slow Zoom Effect */}
+      <motion.div 
+        className="absolute inset-0 w-full h-full z-0"
+        initial={shouldReduceMotion ? { scale: 1 } : { scale: 1.08 }}
+        animate={shouldReduceMotion ? { scale: 1 } : { scale: 1.02 }}
+        transition={{ duration: 25, ease: "easeOut" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-espresso-dark/65 via-espresso/45 to-espresso z-10" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-45 select-none pointer-events-none"
+          src="https://assets.mixkit.co/videos/preview/mixkit-coffee-pour-and-latte-art-close-up-42023-large.mp4"
         />
-      </div>
+      </motion.div>
 
-      {/* Hero Text Content Container - Clicks pass through to background */}
-      <div className="relative z-20 text-center max-w-4xl px-6 flex flex-col items-center select-none pointer-events-none">
+      {/* Hero Text Content Container */}
+      <div className="relative z-20 text-center max-w-4xl px-6 flex flex-col items-center select-none">
         
         {/* Decorative Badge */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.5 }}
-          className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/25 backdrop-blur-md mb-6 pointer-events-auto"
+          className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/25 backdrop-blur-md mb-6"
         >
           <Coffee className="w-4 h-4 text-gold" />
           <span className="text-[9px] md:text-xs font-sans tracking-[0.25em] text-gold-light uppercase font-semibold">
@@ -99,7 +104,7 @@ export const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="font-serif text-5xl md:text-8xl text-cream tracking-tight leading-none mb-6 pointer-events-none"
+          className="font-serif text-5xl md:text-8xl text-cream tracking-tight leading-none mb-6"
         >
           {words.map((word, idx) => (
             <span key={idx} className="inline-block mr-3 md:mr-5 overflow-hidden py-1">
@@ -118,7 +123,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="font-sans text-sm md:text-lg text-latte/75 tracking-wide max-w-xl mb-10 pointer-events-none"
+          className="font-sans text-sm md:text-lg text-latte/75 tracking-wide max-w-xl mb-10"
         >
           Indulge in carefully crafted latte art, single-origin pour overs, and exquisite pairings in our cozy, warm atmosphere. Velvet Bean — Brewed with soul.
         </motion.p>
@@ -128,7 +133,6 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.3 }}
-          className="pointer-events-auto"
         >
           <a
             href="#menu"
@@ -161,7 +165,7 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ delay: 1.7, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 pointer-events-none"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2"
       >
         <span className="text-[8px] text-latte/40 tracking-[0.3em] uppercase">Scroll</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent relative overflow-hidden">
