@@ -32,7 +32,7 @@ export const Hero = () => {
     setRipples((prev) => prev.filter((r) => r.id !== id));
   };
 
-  const tagline = "Brewed with soul.";
+  const tagline = "Vibes. Taste. Celebration.";
   const words = tagline.split(" ");
 
   const containerVariants = {
@@ -80,8 +80,10 @@ export const Hero = () => {
           muted
           playsInline
           className="w-full h-full object-cover opacity-45 select-none pointer-events-none"
-          src={coffeeVideo}
-        />
+        >
+          <source src="/limelight/hero-bg.mp4" type="video/mp4" />
+          <source src={coffeeVideo} type="video/mp4" />
+        </video>
       </motion.div>
 
       {/* Hero Text Content Container */}
@@ -126,7 +128,7 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 1.1 }}
           className="font-sans text-sm md:text-lg text-latte/75 tracking-wide max-w-xl mb-10"
         >
-          Indulge in carefully crafted latte art, single-origin pour overs, and exquisite pairings in our cozy, warm atmosphere. Velvet Bean — Brewed with soul.
+          Welcome to The Limelight Cafe near MJ College, Jalgaon. We specialize in mouth-watering pizzas, sizzling continental dishes, and customized decorations for your perfect birthday parties.
         </motion.p>
 
         {/* Pill CTA button with Custom Ripple Effect */}

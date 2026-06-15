@@ -127,11 +127,11 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
             </div>
 
             {/* Café Brand & Progress */}
-            <h2 className="text-gold font-serif text-3xl tracking-[0.2em] mt-6 uppercase select-none">
-              Velvet Bean
+            <h2 className="text-gold font-serif text-2xl md:text-3xl tracking-[0.1em] mt-6 uppercase select-none">
+              The Limelight Cafe
             </h2>
             <p className="text-latte/40 text-xs font-serif mt-1 tracking-widest uppercase">
-              specialty roasters
+              थे लाइमलाइट कैफे
             </p>
             
             <div className="w-48 bg-caramel h-[2px] mt-6 rounded-full overflow-hidden relative">

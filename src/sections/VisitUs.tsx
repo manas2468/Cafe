@@ -51,10 +51,10 @@ export const VisitUs = () => {
                 Come Inside
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-cream tracking-tight leading-tight mt-3">
-                Visit Velvet Bean
+                Visit The Limelight Cafe
               </h2>
               <p className="font-sans text-sm text-latte/60 mt-4 leading-relaxed">
-                Step away from the rush of the city and sink into a comfortable lounge chair with your favorite brew. We are located in the heart of the historic roasting district.
+                Drop in for a premium food and coffee experience near MJ College Road, Jalgaon. We host parties, birthday celebrations, and daily cravings.
               </p>
             </ScrollReveal>
 
@@ -99,12 +99,12 @@ export const VisitUs = () => {
                   </h3>
                   <div className="font-sans text-sm text-latte/75 flex flex-col gap-1.5">
                     <div className="flex justify-between gap-6 border-b border-gold/5 pb-1">
-                      <span className="text-latte/50">Mon — Fri:</span>
-                      <span className="font-medium text-cream">7:00 AM — 9:00 PM</span>
+                      <span className="text-latte/50">Daily:</span>
+                      <span className="font-medium text-cream">11:00 AM — 10:00 PM</span>
                     </div>
                     <div className="flex justify-between gap-6">
-                      <span className="text-latte/50">Sat — Sun:</span>
-                      <span className="font-medium text-cream">8:00 AM — 10:00 PM</span>
+                      <span className="text-latte/50">Rating:</span>
+                      <span className="font-medium text-gold">4.3 ★ (76 reviews)</span>
                     </div>
                   </div>
                 </div>
@@ -116,19 +116,19 @@ export const VisitUs = () => {
                 <div className="w-9 h-9 rounded-full bg-caramel/40 border border-gold/15 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-espresso transition-all duration-300">
                   <MapPin className="w-4.5 h-4.5" />
                 </div>
-                <span>Colaba Causeway, Near Gateway of India, Colaba, Mumbai 400001</span>
+                <span>Shop No 2, MJ College Rd, Ramanand Nagar, Jalgaon, Maharashtra 425002</span>
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-9 h-9 rounded-full bg-caramel/40 border border-gold/15 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-espresso transition-all duration-300">
                   <Phone className="w-4.5 h-4.5" />
                 </div>
-                <span>+91 22 5550 2326</span>
+                <span>+91 98230 87232</span>
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-9 h-9 rounded-full bg-caramel/40 border border-gold/15 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-espresso transition-all duration-300">
                   <Mail className="w-4.5 h-4.5" />
                 </div>
-                <span>hello@velvetbean.coffee</span>
+                <span>info@thelimelightcafe.in</span>
               </div>
             </ScrollReveal>
           </div>
@@ -141,7 +141,7 @@ export const VisitUs = () => {
               
               <iframe
                 title="Velvet Bean Google Maps Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.205779038237!2d72.82583851489712!3d18.908075387187198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1e83dc2676b%3A0x4a9d7010a307049c!2sColaba%20Causeway%2C%20Colaba%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.8105740445656!2d75.55392681493033!3d21.000223786018317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd90fb319d65cc5%3A0xc3190df0353c7a05!2sM.J.%20College%20Road%2C%20Jalgaon%2C%20Maharashtra%20425002!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
                 className="w-full h-full border-0 select-none grayscale invert-[0.9] sepia-[0.45] hue-rotate-[330deg] brightness-[0.88] contrast-[1.18] relative z-10"
                 allowFullScreen={false}
                 loading="lazy"

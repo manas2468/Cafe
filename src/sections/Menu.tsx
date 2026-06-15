@@ -1,33 +1,103 @@
+import { useState } from 'react';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { TiltCard } from '../components/TiltCard';
 import { Heart, Sparkles, Flame } from 'lucide-react';
 
-const DRINKS = [
+const ITEMS = [
   {
-    name: 'Honey Lavender Latte',
-    price: '$6.50',
-    description: 'Rich espresso infusion combined with sweet wildflower honey, micro-foamed milk, and a delicate top sprinkle of culinary French lavender.',
-    tag: 'Signature',
+    name: 'Paneer Tikka Cheese Burst Pizza',
+    price: '₹280',
+    description: 'Our signature double-layered cheese burst crust topped with local tandoori-marinated paneer chunks, crisp bell peppers, red onions, and baked to golden perfection.',
+    tag: 'Must Try',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?auto=format&fit=crop&q=80&w=600',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=600',
+    localImage: '/limelight/menu-item-1.jpg',
   },
   {
-    name: 'Brown Sugar Shaken Espresso',
-    price: '$6.00',
-    description: 'Blonde espresso shots hand-shaken with caramelized brown sugar, Ceylon cinnamon, ice, and finished with a creamy layer of organic oatmilk.',
-    tag: 'Popular',
+    name: 'Hazelnut Frappé',
+    price: '₹165',
+    description: 'A double shot of chilled specialty espresso, blended creamy with thick milk, roasted Italian hazelnut extract, and topped with dark chocolate shavings.',
+    tag: 'College Favorite',
     icon: Flame,
     image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=600',
+    localImage: '/limelight/menu-item-2.jpg',
   },
   {
-    name: 'Golden Turmeric Steamer',
-    price: '$5.75',
-    description: 'A soothing caffeine-free blend of organic anti-inflammatory turmeric root, ginger, cracked black pepper, and steamed almond milk.',
-    tag: 'Wellness',
+    name: 'Sizzling Chocolate Brownie',
+    price: '₹180',
+    description: 'Freshly baked walnut fudge brownie served on a piping hot iron sizzler plate, crowned with vanilla bean ice cream and smothered in rich hot fudge sauce.',
+    tag: 'Best Seller',
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1618228473300-9a5cf2a60b4f?auto=format&fit=crop&q=80&w=600',
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=600',
+    localImage: '/limelight/menu-item-3.jpg',
   },
 ];
+
+interface MenuItem {
+  name: string;
+  price: string;
+  description: string;
+  tag: string;
+  icon: React.ComponentType<{ className?: string }>;
+  image: string;
+  localImage: string;
+}
+
+const MenuCard = ({ item, index }: { item: MenuItem; index: number }) => {
+  const [imgSrc, setImgSrc] = useState(item.localImage);
+  const IconComponent = item.icon;
+
+  return (
+    <ScrollReveal delay={index * 0.15}>
+      <TiltCard className="w-full h-full">
+        <div className="group glass-card glass-card-hover rounded-[2.5rem] p-6 flex flex-col h-full relative overflow-hidden select-none">
+          
+          {/* Image Area with Zoom & Error Failover */}
+          <div className="w-full h-52 rounded-[1.8rem] overflow-hidden mb-6 relative">
+            {/* Tag Badge */}
+            <span className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-3 py-1 rounded-full bg-espresso-dark/80 border border-gold/25 backdrop-blur-md text-gold text-[10px] uppercase font-semibold tracking-wider">
+              <IconComponent className="w-3.5 h-3.5" />
+              {item.tag}
+            </span>
+            
+            <div className="absolute inset-0 bg-espresso/15 group-hover:bg-transparent transition-colors duration-500 z-10" />
+            <img
+              src={imgSrc}
+              onError={() => setImgSrc(item.image)}
+              alt={item.name}
+              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+            />
+          </div>
+
+          {/* Item Details */}
+          <div className="flex justify-between items-start gap-4 mb-3">
+            <h3 className="font-serif text-xl md:text-2xl text-cream tracking-wide group-hover:text-gold transition-colors duration-300">
+              {item.name}
+            </h3>
+            <span className="font-serif text-lg md:text-xl text-gold font-bold shrink-0">
+              {item.price}
+            </span>
+          </div>
+
+          {/* Description */}
+          <p className="font-sans text-sm text-latte/65 leading-relaxed mb-8">
+            {item.description}
+          </p>
+
+          {/* Action Trigger */}
+          <div className="mt-auto pt-4 flex items-center gap-2 text-gold group-hover:text-gold-light text-xs font-semibold uppercase tracking-widest relative pb-2 w-max clickable">
+            <span>Order Now</span>
+            <span className="text-sm">→</span>
+            
+            {/* Animating golden underline */}
+            <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold transition-all duration-500 group-hover:w-full" />
+          </div>
+
+        </div>
+      </TiltCard>
+    </ScrollReveal>
+  );
+};
 
 export const Menu = () => {
   return (
@@ -40,70 +110,21 @@ export const Menu = () => {
         {/* Section Header */}
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
           <span className="font-serif text-xs md:text-sm text-gold tracking-[0.25em] uppercase font-semibold">
-            The Velvet Bar
+            Cafe Favorites
           </span>
           <h2 className="font-serif text-4xl md:text-6xl text-cream tracking-tight leading-tight mt-4">
-            Signature Drinks
+            Menu Highlights
           </h2>
           <p className="font-sans text-sm md:text-base text-latte/60 mt-4 leading-relaxed">
-            Discover our curated lineup of specialty drinks, hand-crafted by master baristas to excite your palate and warm your soul.
+            Taste our top-rated pizzas, chilled coffee shakes, and sizzling desserts, prepared fresh daily near MJ College area.
           </p>
         </ScrollReveal>
 
         {/* 3 Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {DRINKS.map((drink, index) => {
-            const IconComponent = drink.icon;
-            return (
-              <ScrollReveal key={drink.name} delay={index * 0.15}>
-                <TiltCard className="w-full h-full">
-                  <div className="group glass-card glass-card-hover rounded-[2.5rem] p-6 flex flex-col h-full relative overflow-hidden select-none select-none">
-                    
-                    {/* Image Area with Zoom */}
-                    <div className="w-full h-52 rounded-[1.8rem] overflow-hidden mb-6 relative">
-                      {/* Tag Badge */}
-                      <span className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-3 py-1 rounded-full bg-espresso-dark/80 border border-gold/25 backdrop-blur-md text-gold text-[10px] uppercase font-semibold tracking-wider">
-                        <IconComponent className="w-3.5 h-3.5" />
-                        {drink.tag}
-                      </span>
-                      
-                      <div className="absolute inset-0 bg-espresso/15 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                      <img
-                        src={drink.image}
-                        alt={drink.name}
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                      />
-                    </div>
-
-                    {/* Drink Metadata */}
-                    <div className="flex justify-between items-start gap-4 mb-3">
-                      <h3 className="font-serif text-xl md:text-2xl text-cream tracking-wide group-hover:text-gold transition-colors duration-300">
-                        {drink.name}
-                      </h3>
-                      <span className="font-serif text-lg md:text-xl text-gold font-bold shrink-0">
-                        {drink.price}
-                      </span>
-                    </div>
-
-                    {/* Description */}
-                    <p className="font-sans text-sm text-latte/65 leading-relaxed mb-8">
-                      {drink.description}
-                    </p>
-
-                    {/* Interactive Order Action / Underline animate */}
-                    <div className="mt-auto pt-4 flex items-center gap-2 text-gold group-hover:text-gold-light text-xs font-semibold uppercase tracking-widest relative pb-2 w-max clickable">
-                      <span>Order Now</span>
-                      <span className="text-sm">→</span>
-                      
-                      {/* Animating golden underline */}
-                      <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold transition-all duration-500 group-hover:w-full" />
-                    </div>
-
-                  </div>
-                </TiltCard>
-              </ScrollReveal>
-            );
-          })}
+          {ITEMS.map((item, index) => (
+            <MenuCard key={item.name} item={item} index={index} />
+          ))}
         </div>
 
       </div>

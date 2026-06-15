@@ -9,8 +9,8 @@ export const Footer = () => {
         
         {/* Identity */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left select-none">
-          <h3 className="font-serif text-xl text-gold tracking-widest uppercase">Velvet Bean</h3>
-          <p className="text-[10px] tracking-[0.3em] text-latte/40 uppercase mt-0.5">Specialty Café & Roastery</p>
+          <h3 className="font-serif text-xl text-gold tracking-widest uppercase">The Limelight Cafe</h3>
+          <p className="text-[10px] tracking-[0.2em] text-latte/40 uppercase mt-0.5">Specialty Café & Celebration Lounge</p>
         </div>
 
         {/* Navigation Quicklinks */}

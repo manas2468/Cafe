@@ -5,28 +5,22 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const REVIEWS = [
   {
-    name: 'Sophia Loren',
-    role: 'Connoisseur',
+    name: 'Khushboo Tadavi',
+    role: 'Local Patron',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150',
-    quote: 'The Honey Lavender Latte is an absolute masterpiece of balance. Velvet Bean has created a flavor profile that feels deeply luxurious, floral but never overpowering.',
+    quote: 'Service & food very nice good quality & quantity ✨😍best experience 🙌',
   },
   {
-    name: 'Julian Carter',
-    role: 'Art Director',
+    name: 'Jay Thakkar',
+    role: 'Local Guide',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150',
-    quote: 'An incredible architectural haven in the city. The ambient warm lighting, glassmorphism cards, and organic dividers translate into a cozy, cozy refuge. The shaken espresso is out of this world.',
+    quote: 'One of the best cafe near mj college area. Reasonable rates of food items. Good taste and service',
   },
   {
-    name: 'Elena Rostova',
-    role: 'Food Writer',
+    name: 'Palavi Sagade',
+    role: 'Local Patron',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150',
-    quote: 'Pairing their warm almond cardamom croissant with a single-origin pour-over is a sacred sensory ritual. Every detail here, from the music to the ceramics, has a beautiful soul.',
-  },
-  {
-    name: 'Marcus Aurelius',
-    role: 'Barista Champion',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150',
-    quote: 'Their roasting team operates on another level. Meticulous roasting profiles yield a floral brightness in their single-origins that is rare to find. Highly recommended for purists.',
+    quote: 'Nice cafe for birthday celebration and party. Tasty food.👍😋',
   },
 ];
 

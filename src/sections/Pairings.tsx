@@ -4,33 +4,35 @@ import { ScrollReveal } from '../components/ScrollReveal';
 
 const PAIRINGS_LIST = [
   {
-    name: 'Pistachio Raspberry Tart',
-    price: '$7.50',
-    description: 'Crisp butter shortbread shell filled with house-made fresh raspberry confit, topped with a velvety, rich white-chocolate pistachio ganache and crushed roasted pistachios.',
-    pairWith: 'Honey Lavender Latte',
+    name: 'Tandoori Paneer Roll',
+    price: '₹140',
+    description: 'Juicy skewered paneer tikka chunks wrapped inside a warm, flaky layered rumali paratha, topped with sliced onions and spicy mint chutney.',
+    pairWith: 'Hazelnut Frappé',
   },
   {
-    name: 'Smoked Salmon Brioche',
-    price: '$12.00',
-    description: 'Freshly toasted house brioche bun layered with organic herb cream cheese, pickled shallots, wild capers, micro-dill, and sustainably caught premium smoked sockeye salmon.',
-    pairWith: 'Brown Sugar Shaken Espresso',
+    name: 'Cheese Garlic Bread',
+    price: '₹110',
+    description: 'Toasted baguette slices rubbed with house garlic butter, topped with sweet corn kernels, mixed Italian herbs, and loaded with molten mozzarella cheese.',
+    pairWith: 'Paneer Tikka Pizza',
   },
   {
-    name: 'Almond Cardamom Croissant',
-    price: '$6.00',
-    description: 'Our signature twice-baked flaky croissant, loaded with a sweet cardamom-spiced almond frangipane center and topped with sliced almonds and vanilla bean glaze.',
-    pairWith: 'Golden Turmeric Steamer',
+    name: 'Chocolate Lava Cake',
+    price: '₹90',
+    description: 'Freshly baked single-serve chocolate sponge cake with a molten liquid chocolate center that overflows when cut. Served hot.',
+    pairWith: 'Hazelnut Frappé',
   },
   {
-    name: 'Fig & Goat Cheese Flatbread',
-    price: '$9.50',
-    description: 'Crisp hand-stretched flatbread topped with black mission figs, artisanal goat cheese crumbles, sweet caramelized onions, baby arugula, and a drizzle of local organic honey.',
-    pairWith: 'Single-Origin Pour Over',
+    name: 'Spicy Peri-Peri Fries',
+    price: '₹120',
+    description: 'Crispy golden potato fries tossed in a fiery African peri-peri spice dust, served hot with a side of cooling garlic mayo dip.',
+    pairWith: 'Cold Coffee',
   },
 ];
 
 export const Pairings = () => {
   const [activeIdx, setActiveIdx] = useState<number | null>(0);
+  const [imgSrc1, setImgSrc1] = useState('/limelight/pairing-1.jpg');
+  const [imgSrc2, setImgSrc2] = useState('/limelight/pairing-2.jpg');
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -43,27 +45,29 @@ export const Pairings = () => {
         {/* Column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* Left: Overlapping Asymmetric Image Grid */}
+          {/* Left: Overlapping Asymmetric Image Grid with custom drop fallback */}
           <div className="lg:col-span-6 relative w-full h-[450px] md:h-[550px] flex items-center justify-center">
-            {/* Image 1: Top-Left Croissant */}
+            {/* Image 1: Top-Left Roll */}
             <ScrollReveal className="absolute w-[60%] h-[65%] top-0 left-0 z-10">
               <div className="w-full h-full rounded-[2.5rem] overflow-hidden border border-gold/15 shadow-2xl relative group">
                 <div className="absolute inset-0 bg-espresso/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=600"
-                  alt="Freshly baked butter croissants"
+                  src={imgSrc1}
+                  onError={() => setImgSrc1('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=600')}
+                  alt="Delicious tandoori wraps"
                   className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-108"
                 />
               </div>
             </ScrollReveal>
 
-            {/* Image 2: Bottom-Right Toast/Pastry */}
+            {/* Image 2: Bottom-Right Garlic Bread */}
             <ScrollReveal delay={0.25} className="absolute w-[60%] h-[65%] bottom-0 right-0 z-20">
               <div className="w-full h-full rounded-[2.5rem] overflow-hidden border border-gold/25 shadow-2xl relative group">
                 <div className="absolute inset-0 bg-espresso/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&q=80&w=600"
-                  alt="Avocado sourdough toast topped with microgreens"
+                  src={imgSrc2}
+                  onError={() => setImgSrc2('https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&q=80&w=600')}
+                  alt="Baked cheese garlic bread"
                   className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-108"
                 />
               </div>
@@ -77,13 +81,13 @@ export const Pairings = () => {
           <div className="lg:col-span-6">
             <ScrollReveal className="mb-12">
               <span className="font-serif text-xs md:text-sm text-gold tracking-[0.25em] uppercase font-semibold">
-                Perfect Companions
+                Tasty Companions
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-cream tracking-tight leading-tight mt-3">
-                Food Pairings
+                Snack Pairings
               </h2>
               <p className="font-sans text-sm text-latte/60 mt-4 leading-relaxed">
-                Elevate your coffee ritual with our gourmet pastry pairings, baked fresh daily in-house by our pastry chefs.
+                Elevate your café hangout with our signature side bites, baked and prepared fresh to order.
               </p>
             </ScrollReveal>
 
@@ -96,7 +100,7 @@ export const Pairings = () => {
                     key={food.name}
                     className="border-b border-gold/10 py-6 group clickable"
                     onMouseEnter={() => setActiveIdx(idx)}
-                    onMouseLeave={() => setActiveIdx(idx)} // Retain last active or toggle
+                    onMouseLeave={() => setActiveIdx(idx)}
                   >
                     {/* Header line */}
                     <div className="flex justify-between items-center gap-4 select-none">

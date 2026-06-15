@@ -36,14 +36,13 @@ export const Header = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          {/* Cafe Identity */}
           <a
             href="#home"
-            className="font-serif text-2xl md:text-3xl text-gold tracking-widest uppercase flex flex-col group select-none clickable"
+            className="font-serif text-xl md:text-2xl text-gold tracking-wider uppercase flex flex-col group select-none clickable"
           >
-            <span>Velvet Bean</span>
-            <span className="text-[8px] tracking-[0.4em] text-latte/40 transition-colors group-hover:text-gold-light -mt-0.5">
-              specialty café
+            <span>The Limelight Cafe</span>
+            <span className="text-[7px] tracking-[0.2em] text-latte/40 transition-colors group-hover:text-gold-light -mt-0.5">
+              specialty café & eats
             </span>
           </a>
 
